@@ -2,8 +2,12 @@ package stringutil
 
 func reverse(s string) string {
  t := []rune(s)
- for i, e := 0, len(t)-1; i < len(t)/2; i, e = i+1, e-1 {
+ var i int = 0
+ var e int = len(t)-1
+ for i < e {
   t[i], t[e] = t[e], t[i]
+  i++
+  e--
  }
  return string(t)
 }
